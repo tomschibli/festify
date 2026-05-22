@@ -38,7 +38,10 @@ export default function AuthPage() {
     setLoading(true); setError('')
     const { error: e } = await supabase.auth.signInWithOtp({
       email: email.trim().toLowerCase(),
-      options: { shouldCreateUser: true },
+      options: {
+        shouldCreateUser: true,
+        emailRedirectTo: `${window.location.origin}/auth/callback`,
+      },
     })
     if (e) {
       setError(e.message.includes('rate') ? 'Zu viele Anfragen. Bitte kurz warten.' : e.message)
