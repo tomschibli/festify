@@ -1,12 +1,8 @@
 import { createBrowserClient } from '@supabase/ssr'
 
-// Fallback values allow the app to build/prerender; replace in .env.local
-const FALLBACK_URL = 'https://xyzcompany.supabase.co'
-const FALLBACK_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwbGFjZWhvbGRlciJ9.placeholder'
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://eunhifqytvourasagzqx.supabase.co'
+const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'sb_publishable_3dDSsF2ac9a2-0Tb12dl4g__N5V7JbX'
 
 export function createClient() {
-  return createBrowserClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL || FALLBACK_URL,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || FALLBACK_KEY
-  )
+  return createBrowserClient(SUPABASE_URL, SUPABASE_KEY)
 }
