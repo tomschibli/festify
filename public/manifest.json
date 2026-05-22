@@ -1,0 +1,24 @@
+{
+  "name": "Festify",
+  "short_name": "Festify",
+  "description": "Deine Festival-Crew App",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F4EEDE",
+  "theme_color": "#C85A3C",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
